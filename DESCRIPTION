@@ -1,13 +1,18 @@
 Package: phenor
 Title: An R phenology modelling framework
-Version: 1.1
-Author: Koen Hufkens <koen.hufkens@gmail.com>
-Maintainer: Koen Hufkens <koen.hufkens@gmail.com>
+Version: 1.3
+Authors@R: c(person(
+            family = "Hufkens",
+            given = "Koen",
+            email = "koen.hufkens@gmail.com",
+            role = c("aut", "cre"),
+            comment = c(ORCID = "0000-0002-5070-8109")))
 Description: Provides an R phenology modelling framework.
 Depends:
-    R (>= 3.3.1)
+    R (>= 3.6)
 Imports:
     methods,
+    cli,
     magrittr,
     xml2,
     zoo,
@@ -22,6 +27,8 @@ Imports:
     ncdf4,
     sp,
     snow,
+    foreach,
+    doParallel,
     daymetr,
     phenocamr,
     BayesianTools
@@ -31,4 +38,6 @@ Suggests:
 License: AGPL-3
 LazyData: true
 ByteCompile: true
-RoxygenNote: 6.0.1
+RoxygenNote: 7.1.0
+URL: https://github.com/bluegreen-labs/phenor
+BugReports: https://github.com/bluegreen-labs/phenor/issues

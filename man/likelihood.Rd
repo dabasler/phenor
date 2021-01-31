@@ -2,9 +2,9 @@
 % Please edit documentation in R/cost_functions.r
 \name{likelihood}
 \alias{likelihood}
-\title{A (log) likelihood cost function for model optimization.}
+\title{Log likelihood cost function for model optimization}
 \usage{
-likelihood(par, data, model, sd_range, ...)
+likelihood(par, data, model, ...)
 }
 \arguments{
 \item{par}{a vector of parameter values, this is functions specific}
@@ -15,15 +15,15 @@ to the same data structure.}
 
 \item{model}{the model name to be used in optimizing the model}
 
-\item{sd_range}{standard deviation to be considered during optimization}
-
 \item{...}{extra arguments to pass to the function}
 }
 \value{
 the RMSE comparing observed and estimated values
 }
 \description{
-A (log) likelihood cost function for model optimization.
+The function is aimed to be maximized, to use it with optimizers which
+minimize cost functions wrap the function as such:
+`cost = function(...){abs(likelihood(...))}`
 }
 \examples{
 
@@ -33,7 +33,6 @@ A (log) likelihood cost function for model optimization.
 \dontrun{
 cost_value = likelihood(par, data, model="TTs")
 }
-
 }
 \keyword{cost}
 \keyword{function}
